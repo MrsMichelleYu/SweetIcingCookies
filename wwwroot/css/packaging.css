@@ -1,0 +1,236 @@
+h6 {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    color: #F06E97;
+}
+
+.diameter {
+    margin-top: -4%;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    color: rgb(128, 128, 128);
+}
+
+#size {
+    margin-top: -1%;
+}
+
+#size,
+#StaticSize {
+    text-decoration: underline;
+}
+
+#tin {
+    width: 179%;
+    padding: 2%;
+    margin-top: -2%;
+    height: 205%;
+}
+
+#picture {
+    width: 100px;
+    height: 310px;
+    background-color: #FBE0E7;
+}
+
+#picture a.small,
+#picture a.small:visited {
+    display: block;
+    width: 100px;
+    height: 100px;
+    text-decoration: none;
+    background-color: #FBE0E7;
+    top: 0;
+    left: 0;
+    border: 0;
+}
+
+#picture a .large {
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 0;
+    top: 0;
+    left: 0;
+}
+
+#picture a.small:hover .large {
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 200px;
+    width: 400px;
+    height: 400px;
+    z-index: 2;
+}
+
+#kraft {
+    width: 174%;
+    height: 207%;
+}
+
+#picture2 {
+    width: 100px;
+    height: 250px;
+    background-color: #FAF6F9;
+}
+
+#picture2 a.small,
+#picture2 a.small:visited {
+    display: block;
+    width: 100px;
+    height: 100px;
+    text-decoration: none;
+    background-color: #FAF6F9;
+    top: 0;
+    left: 0;
+    border: 0;
+}
+
+#picture2 a .large {
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 0;
+    top: 0;
+    left: 0;
+}
+
+#picture2 a.small:hover .large {
+    display: block;
+    position: absolute;
+    top: -40px;
+    left: 200px;
+    width: 400px;
+    height: 400px;
+    z-index: 2;
+}
+
+#bag {
+    width: 180%;
+    padding: 2%;
+    margin-top: -1%;
+    height: 195%;
+}
+
+#picture3 {
+    width: 100px;
+    height: 250px;
+    background-color: #FBE0E7;
+}
+
+#picture3 a.small,
+#picture3 a.small:visited {
+    display: block;
+    width: 100px;
+    height: 100px;
+    text-decoration: none;
+    background-color: #FBE0E7;
+    top: 0;
+    left: 0;
+    border: 0;
+}
+
+#picture3 a .large {
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 0;
+    top: 0;
+    left: 0;
+}
+
+#picture3 a.small:hover .large {
+    display: block;
+    position: absolute;
+    top: -50px;
+    left: 200px;
+    width: 400px;
+    height: 400px;
+    z-index: 2;
+}
+
+#box {
+    width: 177%;
+    height: 205%;
+}
+
+#picture4 {
+    width: 100px;
+    height: 250px;
+    background-color: #FAF6F9;
+}
+
+#picture4 a.small,
+#picture4 a.small:visited {
+    display: block;
+    width: 100px;
+    height: 100px;
+    text-decoration: none;
+    background-color: #FAF6F9;
+    top: 0;
+    left: 0;
+    border: 0;
+}
+
+#picture4 a .large {
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 0;
+    top: 0;
+    left: 0;
+}
+
+#picture4 a.small:hover .large {
+    display: block;
+    position: absolute;
+    top: -30px;
+    left: 200px;
+    width: 400px;
+    height: 400px;
+    z-index: 2;
+}
+
+.text1 {
+    color: #90D1BC;
+}
+
+.text2 {
+    color: #9DCEE5;
+}
+
+.pink {
+    background-color: #FBE0E7;
+    padding: 1%;
+}
+
+.box {
+    margin-top: -2%;
+    color: rgb(128, 128, 128);
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+}
+
+.btn {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    color: #FFFFFF;
+    border: none;
+    background-color: #BABABD;
+    position: absolute;
+    margin-left: 79%;
+}
+
+#cart {
+    color: #F06E97;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    margin-left: 87%;
+    position: absolute;
+    left: -98px;
+}

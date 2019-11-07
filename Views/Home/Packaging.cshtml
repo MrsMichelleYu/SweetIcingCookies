@@ -1,0 +1,161 @@
+@model Item
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sweet Icing Cookies</title>
+    <link rel="stylesheet" href="~/css/packaging.css">
+</head>
+<body>
+    <partial name="Navbarpartial"/>
+    <br>
+    <a id="cart" class="nav-item nav-link" href="/cart">View Your Cart</a>
+    <br>
+    <br>
+    <div class="container">
+    <div class="row">
+        <div id="picture" class="col pink">
+            <h6>Cookie Tins</h6>
+            <a class = "small" title="small image"><img id="tin" src="~/img/packaging.jpg" alt="packaging" title="small image"/>
+            <img class="large" src="~/img/packaging.jpg" title = "large image" alt=""/></a>
+        </div>
+        <div class="col pink">
+            <br>
+            <br>
+            <p class="text1">Colored stripped tins for easy, presentable packaging for large amounts of traditional cookies. Available in 3 sizes: 5.7" diameter, 6.8" diameter, 8" diameter.</p>
+        </div>
+        <div class="col pink">
+                <div class="form-group row">
+                    <label for="StaticSize" class="col-sm-6 col-form-label diameter text-center" id="size">Size</label>
+                    <div class="col-sm-6 text-right">
+                        <input type="text" readonly class="form-control-plaintext diameter" id="StaticSize" value="QTY">
+                    </div>
+                </div>
+            <form action="/add/package/16" method="post">
+                <div class="form-group row">
+                    <label for="five" class="col-sm-6 col-form-label diameter text-right">5.7" diameter<br>($5.00 each)</label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" name="Quantity" id="quantity">
+                    </div>
+                    <button type="submit" class="btn">Add</button>
+                </div>
+            </form>
+            <form action="/add/package/17" method="post">
+                <div class="form-group row">
+                    <label for="six" class="col-sm-6 col-form-label diameter text-right">6.8" diameter<br>($7.00 each)</label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control"  name="Quantity" id="quantity">
+                    </div>
+                    <button type="submit" class="btn">Add</button>
+                </div>
+            </form>
+            <form action="/add/package/18" method="post">
+                <div class="form-group row">
+                    <label for="six" class="col-sm-6 col-form-label diameter text-right">8" diameter<br>($8.00 each)</label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" name="Quantity" id="quantity">
+                    </div>
+                    <button type="submit" class="btn">Add</button>
+                </div>
+            </form>
+        </div>
+        <div class="w-100"></div>
+        <br>
+        <br>
+        <div id=picture2 class="col">
+            <h6>Small Kraft Gift Box</h6>
+            <a class="small" title="small image"><img id="kraft" src="~/img/kraft.jpg" alt="kraft bag"/>
+            <img class="large" src="~/img/kraft.jpg" alt="" title="large image"></a>
+        </div>
+        <div class="col">
+            <br>
+            <br>
+            <p class="text2">Small gift boxes perfect for packaging two decorative sugar cookies. Cellophane bag included.</p>
+        </div>
+        <div class="col">
+            <div class="form-group row">
+                <label for="StaticSize" class="col-sm-6 col-form-label diameter text-center" id="size"></label>
+                <div class="col-sm-6 text-right">
+                    <input type="text" readonly class="form-control-plaintext diameter" id="StaticSize" value="QTY">
+                </div>
+            </div>
+            <form action="/add/package/19" method="post">
+                <div class="form-group row">
+                    <label class="col-sm-6 col-form-label box text-right">$6.00 each</label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" name="Quantity" id="quantity">
+                    </div>
+                    <button type="submit" class="btn">Add</button>
+                </div>
+            </form>
+        </div>
+        <div class="w-100"></div>
+        <br>
+        <br>
+        <br>
+        <div id="picture3" class="col pink">
+            <h6>Translucent Plastic Bags</h6>
+            <a class="small" title="small image"><img id="bag" src="~/img/ThankYou.jpg" alt="Thank you bag"/><img class="large" src="~/img/ThankYou.jpg" alt="" title="large image"/></a>
+        </div>
+        <div class="col pink">
+            <br>
+            <br>
+            <p class="text1">Small, self-seal translucent bags with satin ribbon decoration at the front. Great for passing out indivdual cookies to friends and family.</p>
+        </div>
+        <div class="col pink">
+                <div class="form-group row">
+                    <label for="StaticSize" class="col-sm-6 col-form-label diameter text-center" id="size"></label>
+                    <div class="col-sm-6 text-right">
+                        <input type="text" readonly class="form-control-plaintext diameter" id="StaticSize" value="QTY">
+                    </div>
+                </div>
+            <form action="/add/package/20" method="post">
+                <div class="form-group row">
+                    <label class="col-sm-6 col-form-label box text-right">$2.00 each</label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" name="Quantity" id="quantity">
+                    </div>
+                    <button type="submit" class="btn">Add</button>
+                </div>
+            </form>
+        </div>
+        <div class="w-100"></div>
+        <br>
+        <br>
+        <div id="picture4" class="col">
+            <h6>White Sugar Cookie Box</h6>
+            <a class="small" title="small image"><img id="box" src="~/img/WindowBox.jpg" alt="Cookie Box"/><img class="large" src="~/img/WindowBox.jpg" alt="" title="large image"/></a>
+        </div>
+        <div class="col">
+            <br>
+            <br>
+            <p class="text2">Measuring approximately 8" x 8" x 2.25" with 4 risers, made to beautifully present 4 decorative sugar cookies.</p>
+        </div>
+        <div class="col">
+            <div class="form-group row">
+                <label for="StaticSize" class="col-sm-6 col-form-label diameter text-center" id="size"></label>
+                <div class="col-sm-6 text-right">
+                    <input type="text" readonly class="form-control-plaintext diameter" id="StaticSize" value="QTY">
+                </div>
+            </div>
+            <form action="/add/package/21" method="post">
+                <div class="form-group row">
+                    <label class="col-sm-6 col-form-label box text-right">$6.00 each</label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" name="Quantity" id="quantity">
+                    </div>
+                    <button type="submit" class="btn">Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+</body>
+</html>

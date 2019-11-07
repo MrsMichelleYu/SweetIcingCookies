@@ -1,0 +1,24 @@
+img {
+    width: 91%;
+}
+
+h1,
+h4,
+h6 {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+}
+
+h1,
+#email {
+    color: #F06E97;
+}
+
+h4,
+.questions {
+    color: #90D1BC;
+}
+
+.hours {
+    color: #9DCEE5;
+}

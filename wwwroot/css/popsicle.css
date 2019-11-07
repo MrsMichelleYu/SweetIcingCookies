@@ -1,0 +1,39 @@
+h1 {
+    color: #F06E97;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+}
+
+#text {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    color: #90D1BC;
+    margin-left: 20%;
+}
+
+.price,
+.quantity,
+#price1 {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    color: rgb(128, 128, 128);
+}
+
+img {
+    width: 109%;
+    height: 89%;
+}
+
+.btn {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    color: rgb(128, 128, 128);
+    background-color: #FBE0E7;
+    margin-left: 51%;
+}
+
+#cart {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    margin-left: 65%;
+}

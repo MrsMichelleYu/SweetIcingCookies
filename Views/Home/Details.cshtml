@@ -1,0 +1,73 @@
+@model Customer
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sweet Icing Cookies</title>
+    <link rel="stylesheet" href="~/css/details.css">
+</head>
+<body>
+    <partial name="Navbarpartial"/>
+    <br>
+    <br>
+    <h1 class="text-center">Please Review Your Order Details:</h1>
+    <br>
+    <p class="text-center text">Name: @Model.FirstName @Model.LastName</p>
+    @if(Model.PhoneNumber != null)
+    {
+        <p class="text-center text">Phone Number: @Model.PhoneNumber</p>
+    }
+    <p class="text-center text">Email: @Model.Email</p>
+    <p class="text-center text">Billing Address:  @Model.BillingAddress</p>
+    @if(Model.DeliveryAddress != null)
+    {
+        <p class="text-center text">Delievery Address:  @Model.DeliveryAddress</p>
+    }
+    <br>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Price/Item</th>
+                <th scope="col">Total Cost</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var product in ViewBag.Cart)
+        {
+            <tr>
+                <td>@product.Name</td>
+                <td>@product.Quantity</td>
+                <td>@product.Price</td>
+                <td>@product.TotalCost</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <form action="/process" method="post">
+                    <label id="label" for="Notes">Packaging Notes (optional)</label>
+                    <br>
+                    <textarea id="box" type="text" name="Notes" id="" cols="30" rows="10" placeholder="(ex. Two Donut Cookies into Small Kraft Bag, rest in Cookie Tin)"></textarea>
+                    <br>
+                    <button id="button" type="submit" class="btn">Submit Order</button>
+                </form>
+            </div>
+            <div class="col">
+                <p class="text-center text">Subtotal: $@ViewBag.SubTotal.00</p>
+                <p class="text-center text">Delivery Fee: $3.00</p>
+                <p class="text-center text">Tax: $@ViewBag.Tax</p>
+                <p class="text-center text">Final Total: $@ViewBag.FinalTotal</p>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+</body>
+</html>

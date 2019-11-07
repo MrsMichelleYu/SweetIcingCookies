@@ -1,0 +1,36 @@
+h1 {
+    color: #F06E97;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+}
+
+h6 {
+    color: #9DCEE5;
+}
+
+img {
+    width: 43%;
+}
+
+#blueberry {
+    width: 62%;
+    height: 83%;
+}
+
+#peanut {
+    width: 64%;
+    height: 83%;
+}
+
+#pistachio {
+    height: 86%;
+}
+
+#cart {
+    color: #F06E97;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    margin-left: 87%;
+    position: absolute;
+    left: -98px;
+}

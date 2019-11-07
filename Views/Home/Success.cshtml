@@ -1,0 +1,21 @@
+@model Customer
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sweet Icing Cookies</title>
+    <link rel="stylesheet" href="~/css/success.css">
+</head>
+<body>
+    <partial name="Navbarpartial"/>
+    <br>
+    <br>
+    <h3 class="text-center">Thank you for your order!</h3>
+    <p id="text1" class="text-center">A confirmation email as been sent to @Model.Email</p>
+    <br>
+    <br>
+    <a id="clear" href="/clear">Return Back to HomePage</a>
+</body>
+</html>

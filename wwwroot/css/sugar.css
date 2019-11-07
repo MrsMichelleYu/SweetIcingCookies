@@ -1,0 +1,40 @@
+h1 {
+    color: #F06E97;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+}
+
+h6 {
+    color: #90D1BC;
+}
+
+img {
+    width: 37%;
+}
+
+#panda {
+    height: 85%;
+    width: 45%;
+}
+
+#donut {
+    height: 85%;
+}
+
+#hearts {
+    height: 85%;
+}
+
+.LastRow {
+    height: 128%;
+    width: 40%;
+}
+
+#cart {
+    color: #F06E97;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    margin-left: 87%;
+    position: absolute;
+    left: -98px;
+}

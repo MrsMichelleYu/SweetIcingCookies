@@ -1,0 +1,57 @@
+#container {
+    width: 50%;
+    margin-left: 24%;
+}
+
+h1 {
+    font-family: 'Quicksand', sans-serif;
+    color: #F06E97;
+}
+
+#description {
+    color: #9DCEE5;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+}
+
+#cookiebar {
+    width: 40%;
+}
+
+#bridalshower {
+    width: 40%;
+    margin-left: 19%;
+}
+
+#rusticwedding {
+    margin-top: 2%;
+    width: 40%;
+}
+
+#hearts {
+    width: 31%;
+    margin-left: 2%;
+}
+
+#babyshower {
+    width: 20%;
+    height: 30%;
+    margin-left: 5%;
+}
+
+#birthday {
+    width: 20%;
+    height: 30%;
+}
+
+#bridal {
+    width: 40%;
+    margin-top: 2%;
+    margin-left: 6%;
+}
+
+#RoseHearts {
+    width: 20%;
+    height: 20%;
+    margin-left: 8%;
+}

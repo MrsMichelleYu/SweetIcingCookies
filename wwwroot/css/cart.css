@@ -1,0 +1,28 @@
+h1,
+th,
+p {
+    font-family: 'Quicksand', sans-serif;
+    color: #F06E97;
+}
+
+td {
+    font-family: 'Quicksand', sans-serif;
+    color: #90D1BC;
+    font-weight: bold;
+}
+
+.btn {
+    margin-left: 43%;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    color: rgb(128, 128, 128);
+    background-color: #FBE0E7;
+}
+
+.btn:hover {
+    background: #FBE0E7;
+}
+
+#text {
+    color: #F06E97;
+}

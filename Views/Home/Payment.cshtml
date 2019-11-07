@@ -1,0 +1,78 @@
+@model Customer
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sweet Icing Cookies</title>
+    <link rel="stylesheet" href="~/css/payment.css">
+</head>
+<body>
+    <partial name="Navbarpartial"/>
+    <br>
+    <br>
+    <script>$('input[name="PhoneNumber"]').mask('(000) 000-0000');</script>
+    <h1 class="text-center">Please Enter Your Payment Information:</h1>
+    <br>
+    <br>
+    <form asp-action="PaymentInfo" asp-controller="Home" method="post">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label asp-for="FirstName">First Name</label>
+                <span asp-validation-for="FirstName"></span>
+                <input type="text" class="form-control" id="FirstName" asp-for="FirstName">
+            </div>
+            <div class="form-group col-md-6">
+                <label asp-for="LastName">Last Name</label>
+                <span asp-validation-for="LastName"></span>
+                <input type="text" class="form-control" id="LastName" asp-for="LastName">
+            </div>
+        </div>
+        <span asp-validation-for="Email"></span>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label asp-for="Email">Email</label>
+                <input type="text" class="form-control" id="Email" asp-for="Email">
+            </div>
+            <div class="form-group col-md-6">
+                <label asp-for="PhoneNumber">Phone Number</label>
+                <span asp-validation-for="PhoneNumber"></span>
+                <input type="text" class="form-control" id="PhoneNumber" asp-for="PhoneNumber" name="PhoneNumber">
+            </div>
+        </div>
+        <span asp-validation-for="BillingAddress"></span>
+        <div class="form-group">
+            <label asp-for="BillingAddress">Billing Address</label>
+            <input type="text" class="form-control" id="BillingAddress" asp-for="BillingAddress">
+        </div>
+        <div class="form-group">
+            <label asp-for="DeliveryAddress">Delivery Address (If different from Billing Address)</label>
+            <span asp-validation-for="DeliveryAddress"></span>
+            <input type="text" class="form-control" id="DeliveryAddress" asp-for="DeliveryAddress">
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-5">
+                <label asp-for="CreditCardNumber">Credit Card Number</label>
+                <span asp-validation-for="CreditCardNumber"></span>
+                <input type="text" class="form-control" id="CreditCardNumber" asp-for="CreditCardNumber">
+            </div>
+            <div class="form-group col-md-3">
+                <label asp-for="CVV">CVV</label>
+                <span asp-validation-for="CVV"></span>
+                <input type="text" class="form-control" id="CVV" asp-for="CVV">
+            </div>
+            <div class="form-group col-md-4">
+                <label asp-for="Month">Expiration Date</label>
+                <span asp-validation-for="Month"></span>
+                <br>
+                <input type="text" id="month" asp-for="Month" placeholder="MM" maxlength="2" size="2"/>
+                <span>/</span>
+                <input type="text" id="year" asp-for="Year" placeholder="YY" maxlength="2" size="2"/>
+            </span>
+            </div>
+        </div>
+        <button type="submit" class="btn">Submit</button>
+    </form>
+</body>
+</html>

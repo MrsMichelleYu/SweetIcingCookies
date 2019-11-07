@@ -1,0 +1,163 @@
+#logo {
+    width: 30%;
+    height: 30%;
+    margin-left: 34%;
+}
+
+.nav {
+    font-family: 'Quicksand', sans-serif;
+    width: 126%;
+    margin-left: -198px;
+}
+
+.nav a {
+    width: 16.67%;
+}
+
+.nav-item {
+    color: #F06E97;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #BABABD !important;
+    background: transparent !important;
+}
+
+.cookies {
+    color: #F06E97;
+    font-weight: bold;
+    font-family: 'Quicksand', sans-serif;
+    margin-top: 0.5%;
+    margin-left: 1%;
+}
+
+.sugar {
+    margin-left: 0%;
+    margin-top: 2%;
+    background-color: transparent;
+}
+
+.dropdown-menu {
+    background: transparent;
+    border: none;
+    margin-top: -1.5%;
+}
+
+#sugarcookie {
+    height: 465px;
+    width: 458px;
+}
+
+#decorative {
+    width: 30%;
+    margin-left: -14%;
+    margin-top: -9%;
+}
+
+#chocolate {
+    width: 34%;
+    margin-left: 66%;
+    margin-top: -27%;
+}
+
+#traditional {
+    width: 30%;
+    margin-left: 50%;
+    margin-top: -56%;
+}
+
+#wedding {
+    width: 44%;
+    margin-top: -11%;
+}
+
+#events {
+    width: 30%;
+    margin-top: -33%;
+    margin-left: 34%;
+}
+
+#computer {
+    width: 100%;
+    height: 100%;
+    margin-left: 5%;
+}
+
+#text {
+    width: 60%;
+    margin-left: 20%;
+    color: #90D1BC;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+}
+
+#text1 {
+    width: 60%;
+    margin-left: 20%;
+    color: #BABABD;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+}
+
+h2 {
+    color: #F06E97;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+}
+
+h5 {
+    color: #F06E97;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+}
+
+#order {
+    background-color: #FBE0E7;
+    width: 101%;
+    height: 218px;
+    margin-left: 0%;
+}
+
+#packaging {
+    height: 350px;
+    margin-left: 13%;
+}
+
+#thanks {
+    width: 87%;
+    height: 80%;
+    margin-left: -12%;
+}
+
+.reviews {
+    color: #9DCEE5;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+}
+
+#package {
+    margin-left: -3%;
+}
+
+#about {
+    margin-left: 7%;
+}
+
+#OurCookies {
+    margin-left: 2%;
+}
+
+ul {
+    list-style-type: none;
+    margin-left: 37%;
+}
+
+li {
+    display: inline-block;
+}
+
+.iconphoto {
+    height: 22px;
+    margin-left: 100%;
+}

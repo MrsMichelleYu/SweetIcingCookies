@@ -1,0 +1,22 @@
+h1 {
+    font-family: 'Quicksand', sans-serif;
+    color: #F06E97;
+}
+
+#description {
+    font-family: 'Quicksand', sans-serif;
+    color: #90D1BC;
+    font-weight: bold;
+}
+
+#bakery {
+    width: 96%;
+    height: 81%;
+    margin-top: 6%;
+}
+
+#baking {
+    width: 64%;
+    height: 44%;
+    margin-left: 20%;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sweet Icing Cookies</title>
+    <link rel="stylesheet" href="~/css/popsicle.css">
+</head>
+<body>
+    <partial name="Navbarpartial"/>
+    <br>
+    <br>
+    <br>
+    <h1 class="text-center">Llama & Cactus Cookies</h1>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+            <img src="~/img/Llama.jpg" alt="Llama cookies">
+            </div>
+            <div class="col-md-8">
+            <p id="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <form action="/add/5" method="post">
+                <div class="form-group row price">
+                    <label for="price" class="col-sm-6 col-form-label text-center">Price:</label>
+                    <div class="col-sm-6 price">
+                    <input type="text" readonly class="form-control-plaintext" id="price1" value="$4.00/each">
+                    </div>
+                </div>
+                <div class="form-group row quantity">
+                    <label for="quantity" class="col-sm-6 col-form-label text-center">QTY</label>
+                    <div class="col-sm-2">
+                    <input type="text" class="form-control" id="quantity" name="Quantity">
+                    </div>
+                </div>
+                <button type="submit" class="btn">Add To Cart</button>
+            </form>
+            <br>
+            <br>
+            <a id="cart" class="nav-item nav-link" href="/cart">View Your Cart</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
