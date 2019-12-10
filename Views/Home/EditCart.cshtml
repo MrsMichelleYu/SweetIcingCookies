@@ -1,4 +1,4 @@
-@model List<Item>
+@model Item
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +11,7 @@
 <body>
     <partial name="Navbarpartial"/>
     <br>
-    <h1 class="text-center">Cart</h1>
+    <h1 class="text-center">Edit Items In Cart</h1>
     <table class="table">
         <thead>
             <tr>
@@ -23,20 +23,18 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var product in Model)
-            {
-            <tr>
-                <td scope="row">@product.Name</td>
-                <td>@product.Quantity</td>
-                <td>$@product.Price</td>
-                <td>$@product.TotalCost</td>
-                <td><a class="btn" href="/edit/quantity/@product.ProductId" role="button">Change Quantity</a></td>
-            </tr>
-            }
+            <form asp-action="UpdateCart" asp-controller="Home" asp-route-ProductId="@Model.ProductId" method="POST">
+                <tr>
+                    <td scope="row" asp-for="@Model.Name">@Model.Name</td>
+                    <td><input type="text" asp-for="@Model.Quantity"></td>
+                    <td asp-for="@Model.Price">@Model.Price</td>
+                    <td asp-for="@Model.TotalCost">$@Model.TotalCost</td>
+                    <td><button type="submit" class="btn">Update Quantity</button></td>
+                </tr>
+            </form>
         </tbody>
         </table>
-        <p class="text-right">SubTotal: $@ViewBag.SubTotal</p>
-        <a class="btn" href="/payment" role="button">Continue with Payment</a>
+        <a class="btn" href="/cart" role="button">Return To Cart</a>
         <br>
         <br>
 </body>

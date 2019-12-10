@@ -199,6 +199,36 @@ namespace CSharpProject.Controllers
             return View(Retrieve);
         }
 
+        [HttpGet("/edit/quantity/{productId}")] //route that shows form to edit cart
+        public IActionResult EditCart(Item formInfo, int productId)
+        {
+            List<Item> Retrieve = HttpContext.Session.GetObjectFromJson<List<Item>>("Cart");
+            foreach (var item in Retrieve)
+            {
+                if (item.ProductId == productId)
+                {
+                    return View(item);
+                }
+            }
+            return View("Cart");
+        }
+
+        [HttpPost("/update/cart/{productId}")]
+        public IActionResult UpdateCart(Item formInfo, int productId)
+        {
+            List<Item> Retrieve = HttpContext.Session.GetObjectFromJson<List<Item>>("Cart");
+            foreach (var item in Retrieve)
+            {
+                if (item.ProductId == productId)
+                {
+                    item.Quantity = formInfo.Quantity;
+                    item.TotalCost = (formInfo.Quantity * item.Price);
+                    HttpContext.Session.SetObjectAsJson("Cart", Retrieve);
+                }
+            }
+            return RedirectToAction("Cart", Retrieve);
+        }
+
         [HttpGet("panda")]
         public IActionResult Panda()
         {
