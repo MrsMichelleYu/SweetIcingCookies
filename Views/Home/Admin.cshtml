@@ -1,0 +1,35 @@
+@model AdminLogin
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sweet Icing Cookies</title>
+    <link rel="stylesheet" href="~/css/style.css"/>
+<link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+</head>
+<body>
+    <partial name="Navbarpartial"/>
+    <br>
+    <br>
+    <br>
+    <h5 class="text-center">Admin Login</h5>
+    <form asp-action="Login" asp-controller="Home" method="post">
+        <span asp-validation-for="AdminName" class="text-secondary"></span>
+        <div class="form-group">
+            <label asp-for="AdminName">Admin Name</label>
+            <input type="text" class="form-control" id="AdminName" asp-for="AdminName">
+        </div>
+        <span asp-validation-for="Password" class="text-secondary"></span>
+        <div class="form-group">
+            <label asp-for="Password">Password</label>
+            <input type="text" class="form-control" id="Password" asp-for="Password">
+        </div>
+        <center>
+            <button type="submit" class="btn text-center">Login</button>
+        </center>
+    </form>
+</body>
+</html>

@@ -29,6 +29,97 @@ namespace CSharpProject.Controllers
             return View();
         }
 
+        [HttpGet("admin")]
+        public IActionResult Admin()
+        {
+            return View();
+        }
+
+        [HttpPost("login")]
+        public IActionResult Login(AdminLogin admin)
+        {
+            if (ModelState.IsValid)
+            {
+                if (admin.AdminName == "admin" && admin.Password == "a1234")
+                {
+                    HttpContext.Session.SetString("UserName", "admin");
+                    return RedirectToAction("Inventory");
+                }
+            }
+            return View("Admin");
+        }
+
+        [HttpGet("inventory")]
+        public IActionResult Inventory()
+        {
+            string AdminName = HttpContext.Session.GetString("UserName");
+            if (AdminName == null)
+            {
+                return View("Admin");
+            }
+            ViewBag.Admin = AdminName;
+            List<Product> AllProducts = dbContext.Products.OrderBy(prod => prod.ProductId).ToList();
+            return View(AllProducts);
+        }
+
+        [HttpGet("add")]
+        public IActionResult Add()
+        {
+            return View();
+        }
+
+        [HttpPost("add/inventory")]
+        public IActionResult AddInventory(Product newProduct)
+        {
+            if (ModelState.IsValid)
+            {
+                dbContext.Products.Add(newProduct);
+                dbContext.SaveChanges();
+                return RedirectToAction("Inventory");
+            }
+            return View("Add");
+        }
+
+        [HttpGet("/edit/{productId}")]
+        public IActionResult EditProduct(int productId)
+        {
+            Product thisProduct = dbContext.Products.FirstOrDefault(product => product.ProductId == productId);
+            return View("EditProduct", thisProduct);
+        }
+
+        [HttpPost("/update/{productId}")]
+        public IActionResult UpdateProduct(Product formInfo, int productId)
+        {
+            Product thisProduct = dbContext.Products.FirstOrDefault(product => product.ProductId == productId);
+            Console.WriteLine("Product data found");
+            if (ModelState.IsValid)
+            {
+                thisProduct.Name = formInfo.Name;
+                thisProduct.Price = formInfo.Price;
+                thisProduct.CreatedAt = DateTime.Now;
+                thisProduct.UpdatedAt = DateTime.Now;
+                dbContext.SaveChanges();
+                return RedirectToAction("Inventory");
+            }
+            return View("EditProduct", thisProduct);
+        }
+
+        [HttpGet("/delete/{productId}")]
+        public IActionResult Delete(int productId)
+        {
+            Product thisProduct = dbContext.Products.SingleOrDefault(product => product.ProductId == productId);
+            dbContext.Products.Remove(thisProduct);
+            dbContext.SaveChanges();
+            return RedirectToAction("Inventory");
+        }
+
+        [HttpGet("logout")]
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Clear();
+            return View("Admin");
+        }
+
         [HttpGet("about")]
         public IActionResult About()
         {

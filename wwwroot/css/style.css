@@ -106,10 +106,19 @@ h2 {
     font-weight: bold;
 }
 
-h5 {
+h5,
+label,
+a {
     color: #F06E97;
     font-family: 'Quicksand', sans-serif;
     font-weight: bold;
+}
+
+.btn {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    color: rgb(128, 128, 128);
+    background-color: #FBE0E7;
 }
 
 #order {

@@ -10,8 +10,8 @@ namespace CSharpProject.Models
         [Key]
         public int ProductId { get; set; }
 
+        [Required]
         public string Name { get; set; }
-
 
         [Column("Price", TypeName = "DECIMAL(30,2)")]
         public decimal Price { get; set; }

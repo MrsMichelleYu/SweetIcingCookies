@@ -1,0 +1,32 @@
+@model Product
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sweet Icing Cookies</title>
+</head>
+<body>
+    <partial name="Navbarpartial"/>
+    <br>
+    <br>
+    <br>
+    <h5 class="text-center">Add New Product To Inventory</h5>
+    <form asp-action="AddInventory" asp-controller="Home" method="post">
+        <span asp-validation-for="Name" class="text-secondary"></span>
+        <div class="form-group">
+            <label asp-for="Name">Product Name</label>
+            <input type="text" class="form-control" id="Name" asp-for="Name">
+        </div>
+        <span asp-validation-for="Price" class="text-secondary"></span>
+        <div class="form-group">
+            <label asp-for="Price">Price</label>
+            <input type="text" class="form-control" id="Price" asp-for="Price">
+        </div>
+        <center>
+            <button type="submit" class="btn text-center">Add Product</button>
+        </center>
+    </form>
+</body>
+</html>
