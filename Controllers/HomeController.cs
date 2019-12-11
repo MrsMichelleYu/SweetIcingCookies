@@ -19,7 +19,7 @@ namespace CSharpProject.Controllers
             dbContext = context;
         }
 
-        [HttpGet("")]
+        [HttpGet("")] //homepage
         public IActionResult Index()
         {
             if (HttpContext.Session.GetObjectFromJson<List<Item>>("Cart") == null)
@@ -29,13 +29,13 @@ namespace CSharpProject.Controllers
             return View();
         }
 
-        [HttpGet("admin")]
+        [HttpGet("admin")] //page to see Admin Login
         public IActionResult Admin()
         {
             return View();
         }
 
-        [HttpPost("login")]
+        [HttpPost("login")] //route to log into Admin account
         public IActionResult Login(AdminLogin admin)
         {
             if (ModelState.IsValid)
@@ -49,7 +49,7 @@ namespace CSharpProject.Controllers
             return View("Admin");
         }
 
-        [HttpGet("inventory")]
+        [HttpGet("inventory")] //page that shows inventory list once Admin logs in 
         public IActionResult Inventory()
         {
             string AdminName = HttpContext.Session.GetString("UserName");
@@ -62,13 +62,13 @@ namespace CSharpProject.Controllers
             return View(AllProducts);
         }
 
-        [HttpGet("add")]
+        [HttpGet("add")] //form for Admin to enter a new product into Inventory
         public IActionResult Add()
         {
             return View();
         }
 
-        [HttpPost("add/inventory")]
+        [HttpPost("add/inventory")] //route to add new product into Inventory
         public IActionResult AddInventory(Product newProduct)
         {
             if (ModelState.IsValid)
@@ -80,14 +80,14 @@ namespace CSharpProject.Controllers
             return View("Add");
         }
 
-        [HttpGet("/edit/{productId}")]
+        [HttpGet("/edit/{productId}")] // form that allows Admin to edit a product on inventory
         public IActionResult EditProduct(int productId)
         {
             Product thisProduct = dbContext.Products.FirstOrDefault(product => product.ProductId == productId);
             return View("EditProduct", thisProduct);
         }
 
-        [HttpPost("/update/{productId}")]
+        [HttpPost("/update/{productId}")] //route that allows Admin to update a product on inventory
         public IActionResult UpdateProduct(Product formInfo, int productId)
         {
             Product thisProduct = dbContext.Products.FirstOrDefault(product => product.ProductId == productId);
@@ -104,7 +104,7 @@ namespace CSharpProject.Controllers
             return View("EditProduct", thisProduct);
         }
 
-        [HttpGet("/delete/{productId}")]
+        [HttpGet("/delete/{productId}")] // route that allows Admin to delete product on Inventory
         public IActionResult Delete(int productId)
         {
             Product thisProduct = dbContext.Products.SingleOrDefault(product => product.ProductId == productId);
@@ -113,38 +113,33 @@ namespace CSharpProject.Controllers
             return RedirectToAction("Inventory");
         }
 
-        [HttpGet("logout")]
+        [HttpGet("logout")] //log out of Admin account 
         public IActionResult Logout()
         {
             HttpContext.Session.Clear();
             return View("Admin");
         }
 
-        [HttpGet("about")]
+        [HttpGet("about")] //page that talks about Bakery 
         public IActionResult About()
         {
             return View();
         }
 
-        [HttpGet("catering")]
+        [HttpGet("catering")] //page that talks about Catering Services 
         public IActionResult Catering()
         {
             return View();
         }
 
-        [HttpGet("sugar")]
+        [HttpGet("sugar")] //page that lists all of sugar cookies 
         public IActionResult Sugar()
         {
             return View();
         }
 
-        [HttpGet("popsicle")]
-        public IActionResult Popsicle()
-        {
-            return View();
-        }
 
-        [HttpPost("/add/{productId}")]
+        [HttpPost("/add/{productId}")] // allows customer to add sugar cookie into Cart
         public IActionResult AddToCart(Item AddedItem, int productId) //add sugar cookies into cart
         {
             Product retrievedProduct = dbContext.Products.FirstOrDefault(p => p.ProductId == productId);
@@ -157,7 +152,7 @@ namespace CSharpProject.Controllers
             return RedirectToAction("Sugar");
         }
 
-        [HttpPost("/add/traditional/{productId}")]
+        [HttpPost("/add/traditional/{productId}")] //allows customer to add a traditional cookie into Cart
         public IActionResult AddCart(Item AddedItem, int productId)
         {
             Product retrievedProduct = dbContext.Products.FirstOrDefault(p => p.ProductId == productId);
@@ -170,7 +165,7 @@ namespace CSharpProject.Controllers
             return RedirectToAction("Traditional");
         }
 
-        [HttpPost("/add/package/{productId}")]
+        [HttpPost("/add/package/{productId}")] //allows customer to add package into Cart
         public IActionResult AddPackage(Item AddedItem, int productId)
         {
             Product retrievedProduct = dbContext.Products.FirstOrDefault(p => p.ProductId == productId);
@@ -184,7 +179,7 @@ namespace CSharpProject.Controllers
             return RedirectToAction("Packaging");
         }
 
-        [HttpGet("cart")]
+        [HttpGet("cart")] // page that shows all of items in cart
         public IActionResult Cart()
         {
             List<Item> Retrieve = HttpContext.Session.GetObjectFromJson<List<Item>>("Cart");
@@ -199,7 +194,7 @@ namespace CSharpProject.Controllers
             return View(Retrieve);
         }
 
-        [HttpGet("/edit/quantity/{productId}")] //route that shows form to edit cart
+        [HttpGet("/edit/quantity/{productId}")] //page that shows customer form to edit Cart
         public IActionResult EditCart(Item formInfo, int productId)
         {
             List<Item> Retrieve = HttpContext.Session.GetObjectFromJson<List<Item>>("Cart");
@@ -213,7 +208,7 @@ namespace CSharpProject.Controllers
             return View("Cart");
         }
 
-        [HttpPost("/update/cart/{productId}")]
+        [HttpPost("/update/cart/{productId}")] //route that allows customer to update their Cart
         public IActionResult UpdateCart(Item formInfo, int productId)
         {
             List<Item> Retrieve = HttpContext.Session.GetObjectFromJson<List<Item>>("Cart");
@@ -227,6 +222,12 @@ namespace CSharpProject.Controllers
                 }
             }
             return RedirectToAction("Cart", Retrieve);
+        }
+
+        [HttpGet("popsicle")]
+        public IActionResult Popsicle()
+        {
+            return View();
         }
 
         [HttpGet("panda")]
@@ -335,13 +336,13 @@ namespace CSharpProject.Controllers
             return View();
         }
 
-        [HttpGet("/payment")]
+        [HttpGet("/payment")] // shows page for customer to enter payment 
         public IActionResult Payment()
         {
             return View();
         }
 
-        [HttpPost("/paymentinfo")]
+        [HttpPost("/paymentinfo")] // route that allows customer to pay 
         public IActionResult PaymentInfo(Customer newCustomer)
         {
             if (ModelState.IsValid)
@@ -354,7 +355,7 @@ namespace CSharpProject.Controllers
             return View("Payment");
         }
 
-        [HttpGet("/details")]
+        [HttpGet("/details")] //page that shows details of the customer's order
         public IActionResult Details()
         {
             int CustomerId = (int)HttpContext.Session.GetInt32("Customer");
@@ -374,7 +375,7 @@ namespace CSharpProject.Controllers
             return View(retrievedCustomer);
         }
 
-        [HttpPost("/process")]
+        [HttpPost("/process")] //route that finalizes order and enters customer's order into database
         public IActionResult Process(string Notes)
         {
             Order newOrder = new Order();
@@ -397,7 +398,7 @@ namespace CSharpProject.Controllers
             return RedirectToAction("Success");
         }
 
-        [HttpGet("success")]
+        [HttpGet("success")] // success page that shows that customer's order was successful and finalized
         public IActionResult Success()
         {
             int customerId = (int)HttpContext.Session.GetInt32("Customer");
@@ -405,7 +406,7 @@ namespace CSharpProject.Controllers
             return View("Success", thisCustomer);
         }
 
-        [HttpGet("/clear")]
+        [HttpGet("/clear")] //route to go back to homepage after making order, clears session
         public IActionResult Clear()
         {
             HttpContext.Session.Clear();
